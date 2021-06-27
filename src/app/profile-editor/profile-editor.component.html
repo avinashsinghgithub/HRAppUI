@@ -1,0 +1,52 @@
+<form [formGroup]="profileFormfb" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+  </div>
+  <div>
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName"> 
+    </label>
+  </div>
+  
+   
+    
+  <div formGroupName="address">
+    <h3>Address</h3>
+  
+    <label>
+      Street:
+      <input type="text" formControlName="street">
+    </label>
+  
+    <label>
+      City:
+      <input type="text" formControlName="city">
+    </label>
+    
+    <label>
+      State:
+      <input type="text" formControlName="state">
+    </label>
+  
+    <label>
+      Zip Code:
+      <input type="text" formControlName="zip">
+    </label>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!profileFormfb.valid">Submit</button>
+  </div>
+  </form>
+  <p>
+    <button (click)="updateProfile()">Update Profile</button>
+  </p>
+  <div>
+    The first name is: {{this.profileForm.get("firstName").value }}
+  </div>
+  <div>
+  The last name is: {{this.profileForm.get("lastName").value }}
+</div>

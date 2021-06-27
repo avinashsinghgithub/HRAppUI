@@ -1,0 +1,21 @@
+<tr>
+  <th>Employee Name</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Email</th>
+</tr>
+<ul *ngFor="let item of employees">
+      <tr>
+        <td>{{item.employeeId}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.jobId}}</td>
+        <td>{{item.salary}}</td>
+        <td>{{item.phoneNumber}}</td>
+        <td>{{item.hireDate | date }}</td>
+        <td>{{item.commissionPct}}</td>
+        <td>{{item.departmentId}}</td>
+        <td>{{item.managerId}}</td>
+      </tr>
+</ul>

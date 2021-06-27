@@ -1,0 +1,13 @@
+tr > td {
+    border: 1px solid;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+  }
+
+  tr > th {
+    border: 1px solid;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+  }

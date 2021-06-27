@@ -1,0 +1,6 @@
+<div>
+    <button (click)="getBrands()">Get all brands</button>
+</div>
+<ul *ngFor="let item of brands">
+    <li>{{item.brandId}},{{item.brandName}}</li>
+</ul>
