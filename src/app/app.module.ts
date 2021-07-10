@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrandsComponent } from './brands/brands.component';
 import { ConfigService } from './service/config.service';
 import { EmployeesComponent } from './Employees/employees.component';
+import { EmployeeService } from './service/employee.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,7 @@ import { EmployeesComponent } from './Employees/employees.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ConfigService],
+  providers: [ConfigService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

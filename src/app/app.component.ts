@@ -31,5 +31,9 @@ export class AppComponent  implements AfterViewInit,OnInit{
           console.log("Inside dataUsing @Output "+event);
           this.dataUsingOutput1 = event;
         }
-
+        getData(tabIndex:number){
+          if(tabIndex){
+            
+          }
+        }
 }

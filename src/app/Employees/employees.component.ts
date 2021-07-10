@@ -21,4 +21,11 @@ getEmployees() {
             });
         
 }
+getEmployeesFromARange() {
+    this.configService.getConfig()
+        .subscribe((data: any) => {
+            this.employees = data;
+            });
+        
+}
 }
