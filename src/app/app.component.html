@@ -15,9 +15,10 @@
 
   <app-brands></app-brands>-->
   
-  <div class="tab">
-    <button class="tablinks" (click)="getData(1)" >Employees Details</button>
-    <button class="tablinks" (click)="getData(2)">Departments</button>
-    <button class="tablinks" (click)="getData(3)">Jobs</button>
-  </div>  
-  <employees></employees>
+  <nav class="nav">
+    <a class="nav-link active" routerLink="/employees" routerLinkActive="active" aria-current="page" href="#">Employess</a>
+    <a class="nav-link" routerLink="/jobs" routerLinkActive="active">Jobs</a>
+    <a class="nav-link" routerLink="/countries" routerLinkActive="active">Countries</a>
+    <a class="nav-link disabled" routerLink="/locations" routerLinkActive="active" tabindex="-1" aria-disabled="true">Locations</a>
+  </nav>
+  <router-outlet></router-outlet>

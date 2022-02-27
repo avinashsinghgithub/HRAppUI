@@ -16,7 +16,7 @@
 </ul>
 </div>
 
-<ul *ngFor="let item of employees" >
+<ul *ngFor="let item of employeeData.employees" >
       <li>
         <td>{{item.employeeId}}</td>
         <td>{{item.firstName}}</td>
@@ -33,13 +33,22 @@
 </ul>
 
 
-<div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-</div>
+<ngb-pagination
+  [(page)]="employeeData.currentPage"
+  [pageSize]="employeeData.totalEmployeesOnPage"
+  [collectionSize]="employeeData.totalEmployees" 
+  (pageChange)="pageChange($event)"></ngb-pagination>
+
+  <!-- <p>Default pagination:</p>
+<ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+
+<p>No direction links:</p>
+<ngb-pagination [collectionSize]="70" [(page)]="page" [directionLinks]="false"></ngb-pagination>
+
+<p>With boundary links:</p>
+<ngb-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+
+<hr> -->
+
+  <!-- <pre>Current page: {{page}}</pre>
+  <pre>{{employees.length}}</pre> -->

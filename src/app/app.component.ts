@@ -17,7 +17,7 @@ export class AppComponent  implements AfterViewInit,OnInit{
   data :string = "message from parent1";
   dataUsingOutput1:string ;
   dataFromChild: string;
-        @ViewChild(ChildComponent) child;
+        @ViewChild(ChildComponent, {static:true}) child;
 
         update(){
           console.log("update method called");

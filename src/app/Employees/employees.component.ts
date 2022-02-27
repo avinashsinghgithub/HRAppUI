@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ConfigService } from '../service/config.service';
+import { EmployeeData } from '../model/employee-data';
+import { EmployeeService } from '../service/employee.service';
 import { Employee } from './employee';
 @Component({
     selector: 'employees',
@@ -7,25 +8,41 @@ import { Employee } from './employee';
     styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-    employees = new Array<Employee>();
+   // page = 1;
+   // pageSize = 10;
+   // employees = new Array<Employee>();
+   employeeData: EmployeeData;
         ngOnInit(): void {
-            this.getEmployees();
+            this.getEmployeesFromARange();
         }
-constructor(private configService : ConfigService){
+constructor(private employeeService : EmployeeService){
 
 }
 getEmployees() {
-    this.configService.getConfig()
+    this.employeeData = new EmployeeData();
+
+    this.employeeService.getAllEmployees()
         .subscribe((data: any) => {
-            this.employees = data;
+            this.employeeData.employees = data;
             });
         
 }
 getEmployeesFromARange() {
-    this.configService.getConfig()
+    this.employeeData = new EmployeeData();
+    this.employeeData.currentPage="1";
+    this.employeeData.totalEmployeesOnPage="10";
+    this.employeeData.totalEmployees="106";
+    this.employeeService.getEmployeesFromARange()
         .subscribe((data: any) => {
-            this.employees = data;
+            this.employeeData.employees = data;
             });
         
+}
+pageChange(EventEmitter){
+this.employeeData.currentPage=EventEmitter;
+this.employeeService.getEmployeesFromARange(""+Number.parseInt(this.employeeData.currentPage)*Number.parseInt(this.employeeData.totalEmployeesOnPage))
+.subscribe((data: any) => {
+    this.employeeData.employees = data;
+    });
 }
 }

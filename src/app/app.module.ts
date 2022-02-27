@@ -11,6 +11,11 @@ import { BrandsComponent } from './brands/brands.component';
 import { ConfigService } from './service/config.service';
 import { EmployeesComponent } from './Employees/employees.component';
 import { EmployeeService } from './service/employee.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
+import { JobsComponent } from './Jobs/jobs.component';
+import { JobService } from './service/job.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +24,18 @@ import { EmployeeService } from './service/employee.service';
     NameEditorComponent,
     ProfileEditorComponent,
     BrandsComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    NgbPaginationModule, NgbAlertModule,
+    AppRoutingModule
   ],
-  providers: [ConfigService,EmployeeService],
+  providers: [ConfigService,EmployeeService,JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
