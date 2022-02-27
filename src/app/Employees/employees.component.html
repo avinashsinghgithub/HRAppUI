@@ -15,23 +15,24 @@
   </tr>
 </ul>
 </div>
-
-<ul *ngFor="let item of employeeData.employees" >
-      <li>
-        <td>{{item.employeeId}}</td>
-        <td>{{item.firstName}}</td>
-        <td>{{item.lastName}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.jobId}}</td>
-        <td>{{item.salary}}</td>
-        <td>{{item.phoneNumber}}</td>
-        <td>{{item.hireDate | date }}</td>
-        <td>{{item.commissionPct}}</td>
-        <td>{{item.departmentId}}</td>
-        <td>{{item.managerId}}</td>
-      </li>
-</ul>
-
+<div class="container">
+<div *ngFor="let item of employeeData.employees" >
+  <div class="row">
+    <div class="col" >{{item.employeeId}}</div>
+        
+        <div class="col">{{item.firstName}}</div>
+        <div class="col">{{item.lastName}}</div>
+        <div class="col">{{item.email}}</div>
+        <div class="col">{{item.jobId}}</div>
+        <div class="col">{{item.salary}}</div>
+        <div class="col">{{item.phoneNumber}}</div>
+        <div class="col">{{item.hireDate | date }}</div>
+        <div class="col">{{item.commissionPct}}</div>
+        <div class="col">{{item.departmentId}}</div>
+        <div class="col">{{item.managerId}}</div>
+      </div>
+</div>
+</div>
 
 <ngb-pagination
   [(page)]="employeeData.currentPage"
